@@ -131,6 +131,30 @@ hr{
     transition: background-color 0.5s;
     outline: none;
 }
+.add-to-cart-button{
+    
+    background-color: rgb(155, 63, 63);
+    width: 100px;
+    height: 25px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-right: 10px;
+    transition: background-color 0.5s;
+    outline: none;
+}
+.remove-from-store-button{
+    
+    background-color: rgb(70, 125, 170);
+    width: 150px;
+    height: 25px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-right: 10px;
+    transition: background-color 0.5s;
+    outline: none;
+}
 
 .btn:hover{
     border: 2px solid black;
@@ -155,16 +179,29 @@ hr{
 
 }
 
-.bla{
+.shop-item-image{
     flex-basis: 50%;
     min-width: 200px;
     max-width: 300px;
     padding: 20px;
 }
 
+.shop-item-name{
+    font-weight: bold;
+}
+
+.shop-item-description{
+    font-weight: bold;
+}
+
+.shop-item-price{
+    font-weight: bold;
+}
+
+
 /* small screen design */
 
-@media only screen and (max-width: 800px){
+@media  (max-width: 800px){
     body{
         text-align: center;
     }
