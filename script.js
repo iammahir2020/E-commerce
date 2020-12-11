@@ -7,23 +7,22 @@ if(window.localStorage.getItem('products')){
 
 if(products.length>0){
     for(let i=0; i<products.length; i++){
-        // let item = $('<li>').text(products[i].name +" "+ products[i].description +" "+ products[i].photo +" "+ products[i].price)
-        // $('#list').append(item);
+        
+        
         let item_photo = $('<img>').attr("src",products[i].photo);
         let item_name = $('<p>').text("Name: "+products[i].name);
         let item_description = $('<p>').text(" Description: "+products[i].description);
+        let item_price = $('<p>').text(" Price: "+products[i].price);
         
         item_photo.addClass("bla")
-       // $('#list').append(item);
-
-       $('#image_holder').append(item_photo)
-       $('#image_holder').append(item_name)
-       $('#image_holder').append(item_description)
-       //item_photo.appendto($('#image_holder'))
-       //$('#image_holder').append('<p>'+"Name: "+item_name+'</p>')
-       
-
-    }
+        let add_to_cart = $('<button>').text("Add to cart")
+        add_to_cart.addClass("btn")
+        let item_holder = $('<div>')
+        item_holder.append(item_photo, item_name, item_description, item_price,add_to_cart)
+        
+        
+        $('#image_holder').append(item_holder) 
+   }
 }
 
 
@@ -32,22 +31,27 @@ $('#save_button').click(function(event){
     let description = $('#p_description').val();
     let photo = $('#p_photo').val();
     let price = Number($('#p_price').val());
-    // console.log(name +" "+ description +" "+ photo +" "+ price);
+    
 
     if(name && description && photo && price){
-        //let item = $('<li>').text(name +" "+ description +" "+ photo +" "+ price)
+        
         let item_photo = $('<img>').attr("src",photo);
-        let item_name = $('<p>').text(name);
-        let item_description = $('<p>').text(description);
+        let item_name = $('<p>').text("Name: "+name);
+        let item_description = $('<p>').text(" Description: "+description);
+        let item_price = $('<p>').text(" Price: "+price);
         
         item_photo.addClass("bla")
-       // $('#list').append(item);
-
-       $('#image_holder').append(item_photo)
-       $('#image_holder').append(item_name)
-       $('#image_holder').append(item_description)
+       
+        let add_to_cart = $('<button>').text("Add to cart")
+        add_to_cart.addClass("btn")
+       let item_holder = $('<div>')
+       item_holder.append(item_photo, item_name, item_description,item_price,add_to_cart)
+       
+       $('#image_holder').append(item_holder) 
         
-        let newProduct = {name: name, description: description, photo: photo, price: price};
+        
+       
+       let newProduct = {name: name, description: description, photo: photo, price: price};
 
         products.push(newProduct);
         window.localStorage.setItem('products', JSON.stringify(products));
