@@ -1,0 +1,206 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+
+}
+
+nav{
+    flex: 1;
+    text-align: right;
+}
+
+nav ul{
+    display: inline-block;
+    list-style-type: none;
+    
+        
+}
+
+nav ul li{
+    display: inline-block;
+    padding: 5px;
+    margin-right: 10px;
+
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+a:hover{
+    color: rgb(12, 12, 151);
+}
+
+.container{
+    max-width: 1300px;
+    margin:auto;
+    padding:0px 25px;
+}
+
+hr{
+    
+    height: 3px;
+    background-color: black;
+}
+
+.about{
+    display: inline-block;
+}
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.col-1{
+    flex-basis: 50%;
+    min-width: 300px;
+}
+.col-1 h1{
+    font-size: 30px;
+    font-weight: bold;
+    
+}
+.col-1 img{
+    min-width: 100%;
+    padding-left: 100px;
+    padding-right: 25px;
+}
+.title{
+    font-size: 30px;
+    font-weight: bold;
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+    border-bottom: 3px dotted black;
+    max-width: 250px;
+}
+
+.header{
+    background: radial-gradient(#fff, #b3c6ff);
+}
+.form{
+    margin-top: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: center;
+}
+.form fieldset{
+    padding: 20px;
+    align-items: center;
+    
+}
+.form fieldset input{
+    min-width: 500px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid black;
+    
+    
+}
+.form fieldset input:focus{
+    outline: none;
+    border: none;
+    border-bottom: 2px solid black;
+    border-color: rgb(12, 12, 151);
+    
+}
+.btn{
+    
+    background-color: rgb(61, 61, 170);
+    width: 100px;
+    height: 30px;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    margin-right: 20px;
+    transition: background-color 0.5s;
+    outline: none;
+}
+
+.btn:hover{
+    border: 2px solid black;
+    color: black;
+    background-color: rgb(201, 197, 212);
+}
+.buttons{
+    margin-top: 20px;
+}
+
+#list{
+    text-align: center;
+}
+#image_holder{
+    margin:40px;
+}
+
+.photo_design{
+
+    width: 200px;
+    border: 2px solid black;
+
+}
+
+.bla{
+    flex-basis: 50%;
+    min-width: 200px;
+    max-width: 300px;
+    padding: 20px;
+}
+
+/* small screen design */
+
+@media only screen and (max-width: 800px){
+    body{
+        text-align: center;
+    }
+    .form{
+        margin: auto;
+        padding-left: 30px;
+        padding-right: 30px;
+        text-align: center;
+    }
+    .form fieldset{
+        padding: 10px;
+        align-items: center;
+        
+    }
+    .form fieldset input{
+        min-width: 200px;
+        padding: 5px;
+        margin-bottom: 10px;
+        border: none;
+        border-bottom: 1px solid black;
+        
+    }
+    #image_holder{
+        margin:10px;
+    }
+    .photo_design{
+
+        width: 100px;
+        border: 2px solid black;
+    
+    }
+    .bla{
+        flex-basis: 100%;
+        min-width: 100px;
+        max-width: 200px;
+        padding: 10px;
+    }
+
+}

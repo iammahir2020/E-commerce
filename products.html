@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E - Commerce Website</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <!-- homepage -->
+<div class="header">
+
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="images/website_logo.png" alt="website_logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Cart</a></li>
+                </ul>
+            </nav>    
+        </div>
+        <hr>
+    </div>
+    
+</div>
+<div class="products">
+    <div class="show-product">
+        <h2 class="title">All Products</h2>
+        <div class="row">
+            <div id="image_holder" >
+
+            </div>
+        </div>
+        
+            
+        
+        
+    </div>
+    <div class="add-product">
+        <h2 class="title">Add New Products</h2>
+    
+    <div class="form">
+        <fieldset>
+            <legend>Enter Product Information</legend>
+            <input type="text" placeholder="Name" id="p_name"><br>
+            <input type="text" placeholder="Description" id="p_description"><br>
+            <input type="text" placeholder="Photo URL" id="p_photo"><br>
+            <input type="number" placeholder="Price" id="p_price"><br>
+            
+            <button class="btn" id="save_button">Save</button>
+            <button class="btn" onclick="reset_input_fields()">Cancel</button>
+
+        </fieldset>
+        
+    </div>
+
+    </div>
+</div>
+<script src="jquery.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>  
