@@ -20,47 +20,79 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="products.html">Products</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Cart</a></li>
+                    
+                    <li><a href="#SHOW_CART">Cart</a></li>
                 </ul>
             </nav>    
         </div>
-        <hr>
+        
     </div>
     
 </div>
 <div class="products">
-    <div class="show-product">
+    <div class="show-product"style="text-align: center;">
         <h2 class="title">All Products</h2>
-        <div id="image_holder" class="row" >
+        <h3 class="empty_message" id="message1">No Products in the inventory.</h3>
+        <div id="shop_item_holder" class="row" >
 
         </div>
         
         
             
-        
-        
+       
+    <button class="btn"   id="add_Product" onclick="add_Product()" >Add New Product</button>    
     </div>
-    <div class="add-product">
-        <h2 class="title">Add New Products</h2>
     
-    <div class="form">
-        <fieldset>
-            <legend>Enter Product Information</legend>
-            <input type="text" placeholder="Name" id="p_name"><br>
-            <input type="text" placeholder="Description" id="p_description"><br>
-            <input type="text" placeholder="Photo URL" id="p_photo"><br>
-            <input type="number" placeholder="Price" id="p_price"><br>
-            
-            <button class="btn" id="save_button">Save</button>
-            <button class="btn" onclick="reset_input_fields()">Cancel</button>
-
-        </fieldset>
+    <div class="add-product" style="display: none;">
+        <hr>
         
-    </div>
+        <h2 class="title">Add New Products</h2>
+        
+    
+        <div class="form">
+            <fieldset>
+                <legend>Enter Product Information</legend>
+                    <input type="text" placeholder="Name" id="p_name"><br>
+                    <input type="text" placeholder="Description" id="p_description"><br>
+                    <input type="text" placeholder="Photo URL" id="p_photo"><br>
+                    <input type="number" placeholder="Price" id="p_price"><br>
+                    
+                    <button class="btn" id="save_button">Save</button>
+                    <button class="btn" onclick="reset_input_fields()">Cancel</button>
+
+            </fieldset>
+        
+        </div>
 
     </div>
 </div>
+<br><br><br><br>
+<a id="SHOW_CART">
+<h3 class="empty_message" id="message2">No Products added to cart.</h3>
+<div class="cart" style="display: none; text-align: center;">
+    
+    <h2 class="title">Cart Items</h2>
+    <div id="cart_information_holder">
+        <div class="cart_items_design_heading" >
+            <h2 id="image_title"  class="cart_items_standard_width">Product Image</h2>
+            <h2 class="cart_items_standard_width">Product Name</h2>
+            <h2 class="cart_items_standard_width">Price</h2>
+            <h2 class="cart_items_standard_width">Quantity</h2>
+            <h2 class="cart_items_standard_width">Action</h2>
+        </div>
+        <hr>
+
+    </div>
+    <div id="show_total_price"></div>
+    <button class="btn" id="total-price-button" onclick="show_total_price()" >Total Price</button>
+    <br><br><br> 
+    <button id="clear-cart-button" onclick="continueShopping()" >Continue Shopping</button>
+    
+    <button class="btn" id="checkout" onclick="checkout()">Checkout</button>
+    
+</div>
+</a>
+<br>
 <script src="jquery.min.js"></script>
 <script src="script.js"></script>
 </body>

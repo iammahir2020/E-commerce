@@ -6,11 +6,16 @@
 }
 body{
     font-family: 'Poppins', sans-serif;
+    
+}
+.subBody{
+    background: radial-gradient(rgb(255, 255, 255), #ddbfbf);
 }
 .navbar{
     display: flex;
     align-items: center;
     padding: 10px;
+    
 
 }
 
@@ -20,9 +25,10 @@ nav{
 }
 
 nav ul{
-    display: inline-block;
+    /* display: inline-block; */
     list-style-type: none;
-    
+    color: rgb(133, 127, 127);
+    border-bottom: 2px solid black;
         
 }
 
@@ -33,13 +39,13 @@ nav ul li{
 
 }
 
-a{
+nav ul li a{
     text-decoration: none;
-    color: black;
+    color: gray;
     font-weight: bold;
 }
 a:hover{
-    color: rgb(12, 12, 151);
+    color: rgb(0, 0, 0);
 }
 
 .container{
@@ -56,6 +62,7 @@ hr{
 
 .about{
     display: inline-block;
+    
 }
 .row{
     display: flex;
@@ -66,6 +73,7 @@ hr{
 .col-1{
     flex-basis: 50%;
     min-width: 300px;
+    color: gray;
 }
 .col-1 h1{
     font-size: 30px;
@@ -80,6 +88,7 @@ hr{
 .title{
     font-size: 30px;
     font-weight: bold;
+    color: gray;
     margin: auto;
     text-align: center;
     padding-top: 10px;
@@ -87,8 +96,16 @@ hr{
     max-width: 250px;
 }
 
+.empty_message{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+    color: rgb(78, 76, 76);
+}
+
 .header{
-    background: radial-gradient(#fff, #b3c6ff);
+    background: radial-gradient(rgb(255, 255, 255), #ddbfbf);
 }
 .form{
     margin-top: 30px;
@@ -125,6 +142,17 @@ hr{
     width: 100px;
     height: 30px;
     color: white;
+    border: none;
+    border-radius: 15px;
+    margin-right: 20px;
+    transition: background-color 0.5s;
+    outline: none;
+}
+#clear-cart-button{
+    background-color: rgb(77, 184, 125);
+    width: 200px;
+    height: 30px;
+    color: rgb(0, 0, 0);
     border: none;
     border-radius: 15px;
     margin-right: 20px;
@@ -168,7 +196,7 @@ hr{
 #list{
     text-align: center;
 }
-#image_holder{
+#shop_item_holder{
     margin:40px;
 }
 
@@ -183,7 +211,9 @@ hr{
     flex-basis: 50%;
     min-width: 200px;
     max-width: 300px;
-    padding: 20px;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid black;
 }
 
 .shop-item-name{
@@ -197,7 +227,65 @@ hr{
 .shop-item-price{
     font-weight: bold;
 }
+.add-product{
+    margin-top: 100px;
+    
+    background: radial-gradient(rgb(255, 255, 255), #ddbfbf);
+}
 
+.cart_items_standard_width{
+    width: 150px;
+}
+
+
+.cart{
+    background: radial-gradient(rgb(255, 255, 255), #ddbfbf);
+    
+    border: 2px solid black;
+    padding: 20px;
+}
+
+
+.cart_items_design{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: white;
+    border: 1px solid black;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.cart_items_design_heading{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+    
+}
+
+.cart_item_quantity{
+    width: 70px;
+    min-width: 40px;
+    padding: 5px;
+    /* margin-bottom: 5px; */
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.cart_item_quantity:focus{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    border-color: rgb(12, 12, 151);
+}
+
+.cart_item_photo{
+    height: 100px;
+}
 
 /* small screen design */
 
@@ -207,8 +295,8 @@ hr{
     }
     .form{
         margin: auto;
-        padding-left: 30px;
-        padding-right: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
         text-align: center;
     }
     .form fieldset{
@@ -238,6 +326,14 @@ hr{
         min-width: 100px;
         max-width: 200px;
         padding: 10px;
+    }
+    #image_title{
+        display: none;
+    }
+
+    
+    .cart_item_photo{
+        display: none;
     }
 
 }
