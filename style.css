@@ -9,7 +9,7 @@ body{
     
 }
 .subBody{
-    background: radial-gradient(rgb(255, 255, 255), #ddbfbf);
+    background: radial-gradient(rgb(255, 255, 255), #bfd2dd);
 }
 .navbar{
     display: flex;
