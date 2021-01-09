@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E - Commerce Website</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
 </head>
 <body>
@@ -33,11 +34,16 @@
     <div class="show-product"style="text-align: center;">
         <h2 class="title">All Products</h2>
         <h3 class="empty_message" id="message1">No Products in the inventory.</h3>
+        
         <div id="shop_item_holder" class="row" >
 
         </div>
         
-        
+        <a id="single_product">
+            <div id="single_product_View">
+    
+            </div>
+        </a>
             
        
     <button class="btn"   id="add_Product" onclick="add_Product()" >Add New Product</button>    
@@ -93,6 +99,7 @@
 </div>
 </a>
 <br>
+
 <script src="jquery.min.js"></script>
 <script src="script.js"></script>
 </body>

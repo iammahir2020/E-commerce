@@ -98,6 +98,12 @@ if(products.length>0){
         let add_to_cart = $('<button>').text("Add to cart")
         let remove_product = $('<button>').text("Remove Product")
         
+        //
+        let details = $('<button>').text("Details")
+        details.addClass("btn")
+        details.attr('onclick', 'detailsBtnClicked(event)')
+        details.attr('id', 'details'+newbtnId)
+        //
 
         item_photo.addClass("shop-item-image")
         item_name.addClass("shop-item-name")
@@ -127,7 +133,8 @@ if(products.length>0){
         
         let item_holder = $('<div>')
         
-        item_holder.append(item_photo, item_name,item_description,item_price,add_to_cart,remove_product)
+        // item_holder.append(item_photo, item_name,item_description,item_price,add_to_cart,remove_product).css("width","330px")
+        item_holder.append(item_photo, item_name,item_description,item_price,add_to_cart,details,remove_product).css("width","330px")
         
         
         $('#shop_item_holder').append(item_holder) 
@@ -152,6 +159,14 @@ $('#save_button').click(function(event){
         let add_to_cart = $('<button>').text("Add to cart")
         let remove_product = $('<button>').text("Remove Product")
         
+        //
+        let details = $('<button>').text("Details")
+        details.addClass("btn")
+        details.attr('onclick', 'detailsBtnClicked(event)')
+        details.attr('id', 'details'+btnId)
+        //
+
+
 
         item_photo.addClass("shop-item-image")
         item_name.addClass("shop-item-name")
@@ -159,6 +174,7 @@ $('#save_button').click(function(event){
         item_price.addClass("shop-item-price")
         add_to_cart.addClass("add-to-cart-button")
         remove_product.addClass("remove-from-store-button")
+        
 
         add_to_cart.attr('onclick', 'addToCartClicked(event)')
         remove_product.attr('onclick','removeProductFromStore(event)')
@@ -180,7 +196,8 @@ $('#save_button').click(function(event){
 
         let item_holder = $('<div>')
         //item_holder.append(item_photo, item_name,item_description,item_price,add_to_cart)
-        item_holder.append(item_photo, item_name,item_description,item_price,add_to_cart,remove_product)
+        //item_holder.append(item_photo, item_name,item_description,item_price,add_to_cart,remove_product).css("width","110px")
+        item_holder.append(item_photo, item_name,item_description,item_price,add_to_cart,details,remove_product).css("width","330px")
      
         $('#shop_item_holder').append(item_holder)  //adding to the store(display it in the website)
         
@@ -201,6 +218,37 @@ $('#save_button').click(function(event){
 })
 
 
+//showing details of each product
+const detailsBtnClicked=(event)=>{
+        var buttonId = event.target.id; 
+        var res = buttonId.split("details", 2); 
+        var serial = res[1];
+
+        console.log(serial)
+        
+        let name = $('#name'+serial).text().split("Name: ",2) 
+        let price = $('#price'+serial).text().split("Price: $",2)
+        let description = $('#description'+serial).text().split("Description: ",2)
+        let photo = $('#photo'+serial).attr("src")
+
+        
+        
+        let cart_item_photo =$('<div>').append( $('<img>').attr("src",photo).addClass("single_product_img"))
+        let cart_item_description = $('<p>').text(description[1]).css('color','gray')
+        let cart_item_name = $('<h1>').text(name[1])
+        let cart_item_price = $('<h2>').text("$"+price[1])
+        let backBtn = $('<a>').text("Return to All Products Page").attr('href','products.html').addClass("backBtn")
+
+        let item_description = $('<div>').append(cart_item_name,cart_item_description,cart_item_price,backBtn).css('padding','50px')    
+
+        let cart_item_holder = $('<div>')
+        
+        cart_item_holder.append(cart_item_photo,item_description)
+        
+        $('#single_product_View').append(cart_item_holder)
+        window.location.href = "products.html#single_product"; 
+}
+
 //resetting all input fields while adding new products
 const reset_input_fields=()=>{
     $('#p_name').val("");
@@ -213,7 +261,7 @@ const reset_input_fields=()=>{
 //adding products to the cart
 const addToCartClicked=(event)=>{
     $('.cart').show()
-    $('#show_total_price').hide()
+    $('#show_total_price').empty()
     $('#message1').css("display","none")
 
         var buttonId = event.target.id; 
@@ -239,7 +287,7 @@ const addToCartClicked=(event)=>{
         let description = $('#description'+serial).text().split("Description: ",2)
         let photo = $('#photo'+serial).attr("src")
 
-        let cart_item_photo =$('<div>').append( $('<img>').attr("src",photo).css("height","100px")).addClass("cart_items_standard_width")
+        let cart_item_photo =$('<div>').append( $('<img>').attr("src",photo).css("height","100px")).addClass("cart_items_standard_width").addClass("cart_item_photo")
         
         let cart_item_name = $('<p>').text(name[1]).addClass("cart_items_standard_width")
         let cart_item_price = $('<p>').text("$"+price[1]).addClass("cart_items_standard_width")
