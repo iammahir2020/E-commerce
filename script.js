@@ -258,9 +258,17 @@ const reset_input_fields=()=>{
     
 } 
 
+//showing cart when cart option is clicked
+const showCart=()=>{
+    $('#message1').hide()
+    $('.cart').show()
+    window.location.href = "#SHOW_CART"; 
+}
+
 //adding products to the cart
 const addToCartClicked=(event)=>{
     $('.cart').show()
+    $('#message1').hide()
     $('#show_total_price').empty()
     $('#message1').css("display","none")
 
